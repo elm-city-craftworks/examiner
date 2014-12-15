@@ -4,6 +4,8 @@ source 'https://rubygems.org'
 gem 'refile', :require => "refile/rails"
 gem 'aws-sdk'
 gem 'dotenv-rails', :groups => [:development, :test]
+gem 'token_phrase'
+gem 'slim'
 
 ruby '2.1.4'
 
