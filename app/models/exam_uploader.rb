@@ -1,6 +1,7 @@
 class ExamUploader
   def self.upload(zipfile, status=UploadStatus.new)
     submission = Submission.new(:exam_zipfile => zipfile)
+
     submission.code = TokenPhrase.generate(:numbers => false)
 
     if submission.valid?

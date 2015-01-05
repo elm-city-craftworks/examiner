@@ -1,0 +1,23 @@
+SCENARIO: Upload a zip file with entrance exam source code.
+  SubmissionController#create
+    R: Accepts uploaded files from HTTP request params
+    R: Redirects to status page on success, displays errors on upload form otherwise
+
+    C: ExamUploader
+    C*: UploadStatus
+
+  ExamUploader
+    R: Uploads zip file to S3
+    R: Generates random key on successful upload
+    R: Reports errors on upload failure
+
+    C: UploadStatus
+    (I): Submission
+    (I): TokenPhrase
+
+  UploadStatus
+    R: Receives submission keyphrase on successful upload
+    R: Receives error messages on failed upload
+    R: Executes success/failure callbacks
+
+
