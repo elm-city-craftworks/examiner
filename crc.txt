@@ -1,4 +1,6 @@
 SCENARIO: Upload a zip file with entrance exam source code.
+-----------------------------------------------------------
+
   SubmissionController#create
     R: Accepts uploaded files from HTTP request params
     R: Redirects to status page on success, displays errors on upload form otherwise
@@ -21,3 +23,18 @@ SCENARIO: Upload a zip file with entrance exam source code.
     R: Executes success/failure callbacks
 
 
+SCENARIO: Check the status of a submitted exam
+----------------------------------------------
+Implement me!
+
+SCENARIO: Update the status of a submitted exam
+----------------------------------------------
+Implement me!
+
+SCENARIO: Download a submitted zip file
+----------------------------------------------
+Implement me!
+
+SCENARIO: Cancel a submission
+----------------------------------------------
+Implement me!
