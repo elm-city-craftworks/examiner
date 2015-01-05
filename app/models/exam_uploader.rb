@@ -1,18 +1,16 @@
 class ExamUploader
-  def initialize(observer)
-    @observer = observer
-  end
-
-  def upload(zipfile)
+  def self.upload(zipfile, status=UploadStatus.new)
     submission = Submission.new(:exam_zipfile => zipfile)
     submission.code = TokenPhrase.generate(:numbers => false)
 
     if submission.valid?
       submission.save
 
-      @observer.upload_success(submission.code)
+      status.successful_upload(submission.code)
     else
-      @observer.upload_failure(submission.errors.full_messages)
+      status.failed_upload(submission.errors.full_messages)
     end
+
+    status
   end
 end
