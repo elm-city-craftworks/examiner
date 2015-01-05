@@ -1,0 +1,7 @@
+= form_for Submission.new do |f|
+  = f.label :exam_zipfile, "Please upload a zip file containing your source code (100 kb size limit)"
+  br
+  = f.attachment_field :exam_zipfile
+  br
+  br
+  = f.submit

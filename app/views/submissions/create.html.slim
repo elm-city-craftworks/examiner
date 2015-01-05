@@ -1,0 +1,7 @@
+- case @results[:status]
+- when :success
+  = @results[:code]
+- when :failure
+  ul
+    - @results[:errors].each do |e|
+      li= e
