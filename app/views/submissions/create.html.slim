@@ -1,7 +1,7 @@
-- case @results[:status]
-- when :success
-  = @results[:code]
-- when :error
+- @submission.on_upload_success do |code|
+  = code
+
+- @submission.on_upload_failure do |errors|
   ul
-    - @results[:errors].each do |e|
+    - errors.each do |e|
       li= e
