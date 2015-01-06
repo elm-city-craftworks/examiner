@@ -3,3 +3,5 @@ p
   strong #{@submission.status}
 
 p= @submission.notes
+
+= link_to "Download Solution", attachment_url(@submission, :exam_zipfile), :class => "btn btn-default"

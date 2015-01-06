@@ -6,7 +6,10 @@ gem 'aws-sdk'
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'token_phrase'
 gem 'slim'
-
+gem 'bootstrap-sass'
+gem 'bootstrap-filestyle-rails'
+gem 'autoprefixer-rails'
+  
 ruby '2.1.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

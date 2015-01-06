@@ -2,10 +2,17 @@
   p style="color: red"
     = flash.alert
 
-= form_for Submission.new do |f|
-  = f.label :exam_zipfile, "Please upload a zip file containing your source code (200 kb size limit)"
-  br
-  = f.attachment_field :exam_zipfile
-  br
-  br
-  = f.submit
+
+.row
+  .col-md-3
+  .col-md-6
+    .panel.panel-default
+      .panel-body
+        = form_for Submission.new do |f|
+          p
+            | Please select a zip file containing your source code (200kb or less)
+          .form-group
+            = f.attachment_field :exam_zipfile, :class => "filestyle"
+          hr
+          .text-center
+            = f.submit "Submit your exam", :class => "btn btn-primary", "data-input" => false
