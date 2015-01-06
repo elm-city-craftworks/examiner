@@ -1,7 +1,15 @@
-p
-  | Submission status: 
-  strong #{@submission.status}
+.row
+  .col-md-3
+  .col-md-6
+    .panel.panel-default
+      .panel-body
+        .text-center
 
-p= @submission.notes
+          p.lead
+            | Submission status: 
+            strong #{@submission.status.capitalize}
 
-= link_to "Download Solution", attachment_url(@submission, :exam_zipfile), :class => "btn btn-default"
+          p= @submission.notes
+
+          hr
+            = link_to "Download Solution", attachment_url(@submission, :exam_zipfile, :filename => "exam-#{@submission.code}"), :class => "btn btn-default"

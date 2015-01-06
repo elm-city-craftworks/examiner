@@ -1,4 +1,5 @@
 class SubmissionsController < ApplicationController
+  skip_before_filter :authenticate, :only => [:new, :show, :create]
 
   # FIXME: routing, and maybe a wrapper object like ExamStatus.fetch(code)
   def show
