@@ -2,7 +2,9 @@ class SubmissionsController < ApplicationController
 
   # FIXME: routing, and maybe a wrapper object like ExamStatus.fetch(code)
   def show
-    raise Submission.find_by_code(params[:id]).exam_zipfile.read.inspect
+    @submission = Submission.find_by_code(params[:code])
+
+    render "submissions/not_found" unless @submission.present?
   end
 
   def create

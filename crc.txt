@@ -11,10 +11,12 @@ SCENARIO: Upload a zip file with entrance exam source code.
   ExamUploader
     R: Uploads zip file to S3
     R: Generates random key on successful upload
+    R: Sets submission status to 'submitted' on succesful upload
     R: Reports errors on upload failure
 
     C: UploadStatus
-    (I): Submission
+    C: Submission
+
     (I): TokenPhrase
 
   UploadStatus
@@ -25,7 +27,18 @@ SCENARIO: Upload a zip file with entrance exam source code.
 
 SCENARIO: Check the status of a submitted exam
 ----------------------------------------------
-Implement me!
+
+  SubmissionController#show
+
+    R: Looks up submission by keyphrase
+    R: Renders view w. status and notes if key matches
+    R: Renders a "submission not found" error if key does not match
+
+    C: Submission
+
+  Submission
+    
+    R: Handles persistence and retrieval of submission status and notes
 
 SCENARIO: Update the status of a submitted exam
 ----------------------------------------------
