@@ -46,8 +46,15 @@ Implement me!
 
 SCENARIO: Download a submitted zip file
 ----------------------------------------------
-Implement me!
+
+So simple it doesn't make sense to draw up its own cards.
+Maybe roll this in with the 'view the status of a submission' and
+tweak wording to be more general?
 
 SCENARIO: Cancel a submission
 ----------------------------------------------
 Implement me!
+
+SCENARIO: View all submissions and their status
+----------------------------------------------
+Implement me! (Don't forget protection here)
