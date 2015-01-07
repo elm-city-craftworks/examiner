@@ -10,6 +10,3 @@
             strong #{@submission.status.capitalize}
 
           p= @submission.notes
-
-          hr
-            = link_to "Download Solution", attachment_url(@submission, :exam_zipfile, :filename => "exam-#{@submission.code}"), :class => "btn btn-default"

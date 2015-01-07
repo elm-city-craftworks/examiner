@@ -9,7 +9,8 @@ gem 'slim'
 gem 'bootstrap-sass'
 gem 'bootstrap-filestyle-rails'
 gem 'autoprefixer-rails'
-  
+gem "rails_12factor", :group => :production
+
 ruby '2.1.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

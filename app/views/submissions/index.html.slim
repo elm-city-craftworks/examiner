@@ -1,1 +1,6 @@
 h1 Hello World!
+
+ul
+  - Submission.all.each do |s|
+    li
+      = link_to s.code, attachment_url(s, :exam_zipfile, :filename => s.code)
